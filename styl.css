@@ -16,8 +16,14 @@ body{
 }
 
 .ico {
-    width: 30px;
+    width: 60px;
+}
+
+.fet {
+    font-size: 9pt;
+    max-width: 60px;
     padding: 5px;
+    margin: 5px;
 }
 
 .sel {

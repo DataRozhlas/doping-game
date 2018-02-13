@@ -1,15 +1,15 @@
 // namalovat zakladni zobrazeni
 var menu = '<div id="menu">'
 Object.keys(latky).forEach(function(l) {
-    menu += '<div alt="' + l + '" class="fet"><img src="img/ico.png" class="ico"></div>'
+    menu += '<div alt="' + l + '" class="fet"><img src="img/' + latky[l].img + '.jpg" class="ico"><br>' + l + '</div>'
 })
 menu += '</div>'
 $('#hra').append(menu)
-$('#hra').append('<div id="sport"><img class="sportimg" src="img/clovek.gif"></div>')
+$('#hra').append('<div id="sport"><img class="sportimg" src="img/clovek.jpg"></div>')
 $('#details').html('<p class="servisni">Vyber si doping</p>')
 
 function kill() {
-    $('#sport').children().attr('src', 'img/smrt.gif')
+    $('#sport').children().attr('src', 'img/smrt.jpg')
     $('#details').html('<p class="servisni">Ufetoval jsi se :(</p>')
     $('.sel').removeClass('sel')
 
@@ -18,6 +18,7 @@ function kill() {
 $('.fet').on('click', function(e) {
     $('.servisni').remove();
     var fet = $(this).attr("alt");
+    
     //pokud je vybrana, tak odvybrat
    if ($(this).hasClass('sel')) { //prepina stav vybrani
         $(this).removeClass('sel')
@@ -26,7 +27,7 @@ $('.fet').on('click', function(e) {
         var detLength = $('#details').children().length;
         if (detLength == 0) {
             $('#details').html('<p class="servisni">Vyber si doping</p>')
-            $('#sport').html('<img class="sportimg" src="img/clovek.gif">')
+            $('#sport').html('<img class="sportimg" src="img/clovek.jpg">')
         };
         return;
     } else {
