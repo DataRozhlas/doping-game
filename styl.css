@@ -12,7 +12,8 @@ body{
 
 #menu {
     display:flex;
-    justify-content: center
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .ico {
@@ -26,10 +27,18 @@ body{
     margin: 5px;
 }
 
+.sportimg {
+    flex-shrink: 1;
+    object-fit: contain;
+    height: auto;
+}
+
 .sel {
-    border-style: solid;
+    border-style: none;
     border-width: 1px;
-    padding-right: 2px
+    padding: 4px;
+    box-shadow: 0 0 3px #3182bd;
+    transition: all 200ms ease-out;
 }
 
 #details {
@@ -48,8 +57,5 @@ body{
 #sport {
     display:flex;
     justify-content: center;
-}
-
-.sportimg {
-    max-height: 160px;
+    width: 100%;
 }

@@ -11,40 +11,34 @@ $('#details').html('<p class="servisni">Vyber si doping</p>')
 function kill() {
     $('#sport').children().attr('src', 'img/smrt.jpg')
     $('#details').html('<p class="servisni">Ufetoval jsi se :(</p>')
-    $('.sel').removeClass('sel')
+    
 
 };
 
 $('.fet').on('click', function(e) {
     $('.servisni').remove();
     var fet = $(this).attr("alt");
-    
-    //pokud je vybrana, tak odvybrat
-   if ($(this).hasClass('sel')) { //prepina stav vybrani
-        $(this).removeClass('sel')
-        $('div[class="detail"][alt="' + fet + '"]').remove(); //vyhodi popisek
 
-        var detLength = $('#details').children().length;
-        if (detLength == 0) {
-            $('#details').html('<p class="servisni">Vyber si doping</p>')
-            $('#sport').html('<img class="sportimg" src="img/clovek.jpg">')
-        };
-        return;
-    } else {
-        $(this).addClass('sel')
-    };
+    console.log()
+
+    $('.sel').removeClass('sel')
+    $(this).addClass('sel')
+
+
     var detLength = $('#details').children().length;
-    if (detLength == 3) {
-        kill();
-        return;
-    };
+    
     var detail = '<div class="detail" alt="' + fet + '"><b>' + fet + '</b><br>'
 
     Object.keys(latky[fet]).forEach(function(key) {
         detail += key + ': ' + latky[fet][key] + '<br>'
     })
 
+    var imgs = ''
+    latky[fet].img_sporty.split(', ').forEach(function(key) {
+        imgs += '<img class="sportimg" src="img/' + key + '.jpg">'
+    });
+
     detail += '</div>'
-    $('#details').append(detail)
-    $('#sport').children().attr('src', 'img/cyklista.gif')
+    $('#details').html(detail)
+    $('#sport').html(imgs)
 })
