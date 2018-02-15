@@ -12,7 +12,7 @@ $('#hra').append('<div id="hvezdy">'
 $('#hra').append('<div id="sport"><img class="sportimg" src="img/clovek.jpg"></div>')
 $('#details').html('<p class="servisni">Vyber si doping</p>')
 
-var list_omit = ['sporty', 'Aplikace', 'zdroje', 'img', 'img_sporty', 'Skupina']
+var list_omit = ['sporty', 'Aplikace', 'zdroje', 'img', 'img_sporty', 'Skupina', 'Sporty']
 
 $('.fet').on('click', function(e) {
     $('.servisni').remove();
